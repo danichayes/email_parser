@@ -1,0 +1,1721 @@
+Delivered-To: danichayes@gmail.com
+Received: by 2002:a05:6a10:c6c8:b0:5ad:7528:1eb1 with SMTP id z8csp1392214pxv;
+        Sat, 30 Nov 2024 04:31:32 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHlTwWFdMxgf6o2RSw5pnFLQ5nT0rUTOWVqqxkJAG3r47PlbZR8uKX0AvaOz/Pm9Z9po0MH
+X-Received: by 2002:a05:6214:1949:b0:6d8:963e:b4d1 with SMTP id 6a1803df08f44-6d8963ebefbmr19112796d6.18.1732969892498;
+        Sat, 30 Nov 2024 04:31:32 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1732969892; cv=none;
+        d=google.com; s=arc-20240605;
+        b=UemlCWASx1ITbhch2DNZS2pQMCrl6zbDxN0qp5UdpJBLN1aVgsAhTTEuq9bLWJVIqa
+         V90KdoIBeMqyreFvL/Rdk68WFyNuoiAMHt5qWQmKHWwuYWtrgE1tl04Gk+KD8vRx+Y10
+         TUeByBnFoRkvXlEHiR62foXhREZL5ad66v2ovLXzJakqSkARRuMoUYAzLtC6+vv59MsN
+         TkdWhhky6iSs22UGRp/7fDFw9WLZy+UsBoCDopdoOX2RbEh5gyNZHkCXJ5Cal3/O8uvQ
+         EvMXZg+EbCEajqWlrQdSJkvYU3sgWAXUJBE2b1mcd1XrXYq2rYCGdnQp1ndRnM3OJhHG
+         6T4A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-unsubscribe-post:precedence:mime-version
+         :subject:message-id:to:reply-to:from:date:dkim-signature;
+        bh=DnI5JGQpdbmbsiv6Yh5nFZIZunpSAJ1IExKinHzMIPo=;
+        fh=iqM3crHaEyJPtfBCAqA3cngERx70rkPR0K6LnTO/gaE=;
+        b=Odu787zl+fXRPN7nv23BxSxN+QSe6RDVpzB9oaMn5SlFawth528yhjj9HxLQdNf90V
+         Hp1XM6XY7WZD5KV68VLUHILhMZBHtMqBEepEUdDLpWX/9MNJAn+HRpvBNi8EwAwulFO3
+         /H7OXS0cXb0wxXmZkcqdayIVTk3AwtrljrIeqiMSmdU4tMOvmuut44WWd4MXvQiwfE3C
+         VGRDNsh9QOYRLh3uwGKwBamWPLvuGMIvIdCczRJ0J6yKIL2fsjZPTX1ooLp0SWXD9ywj
+         MhYCdAIUMlILL4w8kc3zCZoeMxlv6rtGChiU+k6tlDC5vswO6VOWaLswX8qT4v3gTQHb
+         QQxg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@morningbrew.com header.s=sailthru header.b="LaU4/0kq";
+       spf=pass (google.com: domain of delivery_20241130072732.37627402.3441033@bounce.morningbrew.com designates 192.64.237.121 as permitted sender) smtp.mailfrom=delivery_20241130072732.37627402.3441033@bounce.morningbrew.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=morningbrew.com
+Return-Path: <delivery_20241130072732.37627402.3441033@bounce.morningbrew.com>
+Received: from morningbrew-b.sailthru.com (morningbrew-b.sailthru.com. [192.64.237.121])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6d8751cd751si75532926d6.116.2024.11.30.04.31.32
+        for <danichayes@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 30 Nov 2024 04:31:32 -0800 (PST)
+Received-SPF: pass (google.com: domain of delivery_20241130072732.37627402.3441033@bounce.morningbrew.com designates 192.64.237.121 as permitted sender) client-ip=192.64.237.121;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@morningbrew.com header.s=sailthru header.b="LaU4/0kq";
+       spf=pass (google.com: domain of delivery_20241130072732.37627402.3441033@bounce.morningbrew.com designates 192.64.237.121 as permitted sender) smtp.mailfrom=delivery_20241130072732.37627402.3441033@bounce.morningbrew.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=morningbrew.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=sailthru; d=morningbrew.com;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ List-Unsubscribe-Post:List-Unsubscribe; i=crew@morningbrew.com;
+ bh=DnI5JGQpdbmbsiv6Yh5nFZIZunpSAJ1IExKinHzMIPo=;
+ b=LaU4/0kqvbnS95dTxzVQqIBPyRQ4NbR9ehZb/6i28cpwrKjp5ud9+G5BWm038BJ1ziz3pHnciEOa
+   0yetd1LPLchz7B0OUixTc+q1WO8OV0CruhHnGMabAK6IODePlLoFC1y5F+bpV2cBviiHm/QjEBji
+   agor770b+7L6aeoWNuo=
+Received: from aws1-mta-relay10.sailthru.cloud (10.55.89.163) by morningbrew-b.sailthru.com id h9c2q83791sk for <danichayes@gmail.com>; Sat, 30 Nov 2024 06:27:32 -0600 (envelope-from <delivery_20241130072732.37627402.3441033@bounce.morningbrew.com>)
+Date: Sat, 30 Nov 2024 07:27:32 -0500 (EST)
+From: Morning Brew <crew@morningbrew.com>
+Reply-To: crew@morningbrew.com
+To: danichayes@gmail.com
+Message-ID: <20241130072732.37627402.3441033@sailthru.com>
+Subject: =?utf-8?B?4piVIFBvbGFyIEJyZXc=?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_2505294_1051975650.1732969652550"
+Precedence: bulk
+x-job: 7748-37627402-20241130
+X-Feedback-ID: 7748:37627402:campaign:sailthru
+X-TM-ID: 20241130072732.37627402.3441033
+X-Info: Message sent by sailthru.com customer Morning Brew
+X-Info: We do not permit unsolicited commercial email
+X-Info: Please report abuse by forwarding complete headers to
+X-Info: abuse@sailthru.com
+X-Mailer: sailthru.com
+X-JMailer: aws-campaign-mailer-9.sailthru.cloud
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Unsubscribe-Web: https://link.morningbrew.com/oc/64bed5aa5a672f53250a0308mehhm.21r49/f6aa7822
+List-Unsubscribe: <https://link.morningbrew.com/oc/64bed5aa5a672f53250a0308mehhm.21r49/f6aa7822>,<mailto:unsubscribe_20241130072732.37627402.3441033@mx.sailthru.com>
+X-rpcampaign: stlma37627402
+
+------=_Part_2505294_1051975650.1732969652550
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Oops! Looks like your email provider is scrambling the email :( Click here to read it in full online:
+https://www.morningbrew.com/issues/polar-brew?from_plain_text=true&mid=eb5f6cde1fd13eca3d0f18c02d5a8fe6
+
+We'd hate to see you go, but if you want to unsubscribe, please click here:
+https://www.morningbrew.com/account/j2H7CF9WWEchgnE4n7ryYNum/edit?bid=37627402
+------=_Part_2505294_1051975650.1732969652550
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html xmlns=3D"https://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-micros=
+oft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">
+<meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1" name=3D"viewport"=
+>
+<title>Daily Brew // Morning Brew // Update</title>
+<!--[if mso]><style data-roadie-ignore=3D'' type=3D'text/css'>
+body, table, tr, td, h1, h2, h3, h4, p, a, span{font-family: Arial, Helveti=
+ca, sans-serif;}.stb-ref-count{background-color: issue.primary_color;}.link=
+{color: issue.primary_color !important; text-decoration: underline !importa=
+nt;}.disclaimer{font-size:8px;}
+</style><![endif]-->
+<style>@media only screen and (max-width:600px) {
+body{margin-right:1px !important;margin-left:1px !important}
+.clear{display:block !important;width:100% !important;text-align:center !im=
+portant}
+.clear p{margin-bottom:2px !important;margin-top:0 !important}
+.clear img{width:160px !important}
+.img-responsive{width:100% !important;display:block}
+.c6{margin-right:2px !important;margin-left:2px !important}
+.ticker{width:40% !important;text-align:center !important}
+.symbol{display:block !important;margin:0 auto !important;text-align:center=
+ !important}
+.pads10{padding-right:15px !important;padding-left:15px !important}
+.pads6m{padding-right:6px !important;padding-left:6px !important}
+.w30{width:30% !important}
+.stock-bubble-header{font-size:14px !important}
+.stock-bubble-subtext{font-size:14px !important}
+.markets-table-text{font-size:15px !important}
+.markets-ticker-cell{width:28% !important}
+.markets-value-cell{width:32% !important}
+.markets-bubble-cell{width:28% !important}
+.markets-bubble{width:85% !important}
+.markets-arrow{width:30% !important}
+.survey-title{padding-bottom:0px !important}
+a.survey-option{font-size:12px !important;margin-bottom:10px}
+}
+@media screen and (max-width:370px) {
+.pad5m{padding:5px !important}
+.pcard370{padding:6px !important}
+.pcard370 h3{padding:8px !important}
+.stock-bubble-header{font-size:12px !important}
+.stock-bubble-subtext{font-size:12px !important}
+.markets-table-text{font-size:15px !important}
+.markets-bubble{width:95% !important}
+.markets-arrow{width:35% !important}
+}
+@media only screen and (max-width: 600px) {
+body{margin-right:1px !important;margin-left:1px !important}
+.clear{display:block !important;width:100% !important;text-align:center !im=
+portant}
+.clear p{margin-bottom:2px !important;margin-top:0px !important}
+.clear img{width:160px !important}
+.c6{margin-right:2px !important;margin-left:2px !important}
+.ticker{width:40% !important;text-align:center !important}
+.symbol{display:block !important;margin:0 auto !important;text-align:center=
+ !important}
+.mso-symbol{display:inline-block !important;margin:0 auto !important;text-a=
+lign:center !important}
+}
+@media screen and (max-width: 370px) {
+.pad5m{padding:5px !important}
+.pcard370{padding:6px !important}
+.pcard370 h3{padding:8px !important}
+}
+@media only screen and (max-width: 670px) {
+td.primary-sponsor{display:block !important;width:100% !important;text-alig=
+n:center !important;padding-right:0px}
+}</style>
+</head>
+<body style=3D"margin:0px">
+<table style=3D"border-collapse:collapse;table-layout:fixed;margin:0 auto;d=
+isplay:none;">
+<tr>
+<td>
+Business is booming in the Arctic and Antarctica...
+</td>
+</tr>
+</table>
+<div class=3D"core_hidden oslo_hidden" style=3D"display: none !important">
+<a href=3D"http://www.morningbrew.com"><img src=3D"https://link.morningbrew=
+.com/img/64bed5aa5a672f53250a0308mehhm.21r49/374e1f48.gif" alt=3D"" border=
+=3D"0" /></a>
+</div>
+<table width=3D"100%" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"border-collapse: collapse;">
+<tr>
+<td>
+<!--[if (gte mso 9)|(IE)]>
+<table width=3D"670" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" s=
+tyle=3D"border: 0; width: 670px;" role=3D"Presentation">
+<tr>
+<td>
+<![endif]-->
+<div style=3D"display: block; max-width: 670px; margin: 0 auto;">
+<!-- HEADER -->
+<!--[if !mso ]> <!- -->
+<div class=3D"c6" style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border-collapse: collapse;">
+<tr>
+<th class=3D"card pcard" style=3D"text-align:left;font-weight:400;padding:1=
+5px;font-family:Helvetica, Arial, sans-serif;font-size:16px;color:#333;disp=
+lay:block;background-color:#fff;border-radius:15px;border:1px solid #e6e6e6=
+;border-collapse:collapse;box-shadow:none;margin-bottom:0px">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border-collapse: collapse;">
+<tr>
+<td style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 12px;col=
+or:#000000; ">
+November 30, 2024
+</td>
+<td align=3D"right" style=3D"font-family: Arial, Helvetica, sans-serif; fon=
+t-size: 12px; text-align: right; " class=3D"core_hidden">
+<a style=3D"color: #000000; text-decoration: none;" target=3D"_blank" rel=
+=3D"noopener" href=3D"https://links.morningbrew.com/c/sru?mbcid=3D37627402.=
+3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7r=
+yYNum">View Online</a>
+|
+<a style=3D"color: #000000; text-decoration: none;" target=3D"_blank" rel=
+=3D"noopener" href=3D"https://links.morningbrew.com/c/s1X?kid=3Dc8410467&mb=
+cid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7=
+CF9WWEchgnE4n7ryYNum">Sign Up</a>
+|
+<a style=3D"color: #000000; text-decoration: none;" target=3D"_blank" rel=
+=3D"noopener" href=3D"https://links.morningbrew.com/c/6NY?mbcid=3D37627402.=
+3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7r=
+yYNum">Shop</a>
+</td>
+</tr>
+</table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border-collapse: collapse;">
+<tr>
+<td align=3D"center" style=3D"padding-top:25px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+ 18px;">
+<a target=3D"_blank" href=3D"https://links.morningbrew.com/c/s1X?mbcid=3D37=
+627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEch=
+gnE4n7ryYNum">
+<img class=3D"logo-img" style=3D"display: block; width: 100%; max-width: re=
+vert; margin: 0 auto; border-radius: 8px;" width=3D"450" alt=3D"Morning Bre=
+w" src=3D"https://cdn.sanity.io/images/bl383u0v/production/65e2f7af234829db=
+a0f11606a9a1430efab65892-1350x330.png?w=3D900&amp;fit=3Dmax" />
+</a>
+</p>
+</td>
+</tr>
+</table>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"border-collapse:collapse; table-layout: fixed; margin: 0 auto;">
+<tr>
+<th align=3D"right" class=3D"clear sponsor mwk-sponsor-container" style=3D"=
+text-align:left;font-weight:400;font-family:Helvetica, Arial, sans-serif;fo=
+nt-size:13px;color:#494949;padding-right:8px;" valign=3D"middle">
+<p class=3D"mwk-sponsor-text" style=3D"line-height:22px;margin-top:0;margin=
+-bottom:15px;font-weight:bold; color:#000; margin-top:15px; margin-bottom:1=
+5px; line-height:22px; text-transform:uppercase">
+Presented By
+</p>
+</th>
+<th class=3D"mwk-sponsor-container clear" style=3D"text-align:left;font-wei=
+ght:400">
+<a style=3D"border-botton:none!important;" target=3D"_blank" href=3D"https:=
+//links.morningbrew.com/c/sxt?lp=3Dlogo&mbadid=3Df679930d3e4c077d7136e8e244=
+400b4c&mbadv=3Da&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5=
+a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D""><img alt=3D"Pacaso" sty=
+le=3D"width:100%;max-width:150px;display:inline;vertical-align:middle;" wid=
+th=3D"150" src=3D"https://cdn.sanity.io/images/bl383u0v/production/e684a2c3=
+2903549ae850c79271a27c312acf1f13-1040x240.png?w=3D300&q=3D100&auto=3Dformat=
+"></a>
+</th>
+</tr>
+</table>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border-collapse: collapse;">
+<tr>
+<td style=3D"padding-top:20px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000"></strong></p>
+<img class=3D"img-responsive" src=3D"https://cdn.sanity.io/images/bl383u0v/=
+production/cb1d08632873e243fda347d3fe1acf25b51b5a53-2000x1333.jpg?w=3D668&q=
+=3D70&auto=3Dformat" alt=3D"An illustration of Arctic explorers" style=3D"d=
+isplay:block;width:100% !important"><span class=3D"source" style=3D"display=
+:inline-block;padding-left:10px;margin-top:5px;margin-bottom:0px;line-heigh=
+t:14px"><small><em>Till Lukat</em></small></span><p style=3D"line-height:22=
+px;margin-top:20px;margin-bottom:15px"><strong style=3D"color:#000">Good mo=
+rning. </strong>Today, we give you a special edition that is near and dear =
+to our hearts: Polar Brew, which is all about the business of the Arctic an=
+d Antarctica.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Here you=E2=
+=80=99ll find fascinating stories about the polar economy, Greenland=E2=80=
+=99s influx of tourists, modern-day expeditions through the Antarctic waste=
+land, and how researchers in remote areas are starting to...develop their o=
+wn accents.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">TL;DR: Santa=
+=E2=80=99s Workshop has lots of local competition now.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><em>=E2=80=94=
+Sam Klebanov, Dave Lozo, Cassandra Cassidy, Adam Epstein</em></p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END HEADER -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+ECONOMY
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"https://links.morningbrew.com/c/ssK?=
+mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2=
+H7CF9WWEchgnE4n7ryYNum"><font color=3D'#000'>
+The polar economy is heating up
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/ssK?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img alt=3D"Arcti=
+c town" style=3D"display: block; width: 100%; max-width: 670px;" width=3D"6=
+70" class=3D"story-header-image" src=3D"https://cdn.sanity.io/images/bl383u=
+0v/production/681cbe08e8dfdc9b1b4aa536ff666282569d4bda-6016x4016.jpg?w=3D66=
+8&amp;q=3D70&amp;auto=3Dformat" />
+</a><span class=3D"source" style=3D"display:inline-block;padding-left:10px;=
+margin-top:5px;margin-bottom:0px;line-height:14px"><small><em>Sammyvision/G=
+etty Images</em></small></span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">The economy i=
+s frigid at Earth=E2=80=99s fringes, where ice breakers and snowmobiles are=
+ a must to get moving. But as climate change heats the Arctic and Antarctic=
+a faster than the rest of the planet, the majestically icy regions are awak=
+ening from their commercial slumber.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">That is parti=
+cularly true of the area around the North Pole. Even as higher temperatures=
+ threaten Arctic ecology, less ice in the summer has led to a longer window=
+ for ships to traverse the Arctic Ocean each year:</p>
+<ul style=3D"margin-top:0;padding-left:30px">
+<li style=3D"line-height:22px;margin-bottom:10px">
+<span>The number of vessels operating in the region </span><span><a href=3D=
+"https://links.morningbrew.com/c/ssL?mblid=3Dc754d02b7a8e&mbcid=3D37627402.=
+3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7r=
+yYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px solid #1=
+c7ff2;text-decoration:none;color:#333">rose by nearly 40%</a></span><span> =
+in the decade leading up to 2023, according to the Arctic Council, largely =
+due to increased natural gas and oil drilling activity. Several efforts are=
+ underway to explore the Arctic for minerals that are critical to the clean=
+ energy industry.</span>
+</li>
+<li style=3D"line-height:22px;margin-bottom:10px"><span>Container shipping =
+is also ratcheting up. Late last year, the NewNew Shipping Line launched th=
+e first regular cargo route to pass through the Arctic Ocean. Running from =
+St. Petersburg, Russia, to Shanghai, China, the polar shortcut shaves two w=
+eeks off the traditional travel time.</span></li>
+</ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Leisure trave=
+l to the Arctic Circle has also been growing at a non-glacial pace as Europ=
+ean tourists in search of wintry vacations and more powdery skiing are head=
+ing north. Finnair increased flights to the northern region of Lapland, aka=
+ the home of Santa, by 20% this year, while Canada=E2=80=99s northernmost r=
+egion, Nunavut, aspires to grow its tourism industry to $1 billion annually=
+ by 2030.</p>
+<h2 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:19px;font-w=
+eight:700;color:#000;margin-top:0;margin-bottom:15px;margin-right:0;margin-=
+left:0">Meanwhile, a world away=E2=80=A6</h2>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Antarctica ad=
+venturism has soared in the last 30 years from 8,000 tourists in the 1993=
+=E2=80=931994 winter season to 105,000 in 2022=E2=80=932023 and an anticipa=
+ted 117,000 for 2023=E2=80=932024. Travelers typically don=E2=80=99t march =
+onto the penguin continent, but rather remain on cruise ships with climate =
+scientists lecturing on board=E2=80=94an industry that generates an estimat=
+ed $820 million annually.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Otherwise, An=
+tarctica=E2=80=99s vast icy expanse remains largely untouched by commercial=
+ activity. Though its ice sheets are believed to conceal a treasure trove o=
+f minerals and fossil fuels, commercial mining is banned by the Antarctic T=
+reaty until at least 2048. Three-fourths of the 26 signatory countries woul=
+d have to consent to undo the ban, an unlikely move due to logistical chall=
+enges and the region=E2=80=99s conservational value.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">Nature is doing the economic legwork=E2=80=A6</strong>since=
+ much of Antarctica=E2=80=99s $180 billion annual contribution to the globa=
+l economy comes not from human activity but from its ice sheets, which prev=
+ent catastrophic climate events by absorbing carbon dioxide and regulating =
+ocean flows, according to a recent analysis by University of Tasmania resea=
+rchers.<em>=E2=80=94SK</em></p>
+<!-- SOCIAL LINKS -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td style=3D"padding-top: 12px;">
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssM?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/cab2ac077d288f7ba1df3571cb0ec28ce8f32b86-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssN?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/ea53a551202a4963e49199a40daf05b487846624-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssO?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/774271f5d2278014f1af0759475660e1761384eb-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a>
+</td>
+</tr>
+</table>
+<!-- END SOCIAL LINKS -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0;text-transform:upperca=
+se;">
+Presented By Pacaso
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"blank" style=3D"color:#000!important;text-decoration:none;bord=
+er-bottom:none!important;" href=3D"https://links.morningbrew.com/c/sxt?lp=
+=3Dtitle&mbadid=3Df679930d3e4c077d7136e8e244400b4c&mbadv=3Da&mbcid=3D376274=
+02.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4=
+n7ryYNum"><strong style=3D"color:#000">See who=E2=80=99s buying this =E2=80=
+=9Cunlisted=E2=80=9D stock</strong></a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/sxt?lp=3Dimage&mbadid=3Df679930d3e4c077d7136e=
+8e244400b4c&mbadv=3Da&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18=
+c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D""><img alt=3D"Pacaso=
+" style=3D"display:block;width:100%;max-width:670px;" width=3D"670" class=
+=3D"story-header-image" src=3D"https://cdn.sanity.io/images/bl383u0v/produc=
+tion/6662d65a78476fc06a4e3a70568ccb9580d5f769-1200x800.png?w=3D668&q=3D90&a=
+uto=3Dformat"></a>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"sponsored-body story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">When the team=
+ that created Zillow and grew it into a $16b real estate leader starts a ne=
+w company, investors take note. And firms like SoftBank and Maveron have al=
+ready invested in <a href=3D"https://links.morningbrew.com/c/sxt?lp=3Dtext1=
+&mbadid=3Df679930d3e4c077d7136e8e244400b4c&mbadv=3Da&mblid=3D7b612c987e70&m=
+bcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H=
+7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bot=
+tom:2px solid #1c7ff2;text-decoration:none;color:#333">Pacaso</a>.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"></p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Pacaso=E2=80=
+=99s streamlined digital marketplace offers fractional ownership of premier=
+ properties, completely revamping a $1.3t market.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"></p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">This co-owner=
+ship approach maximizes demand by minimizing costs and worries. Look no fur=
+ther than their 1,500+ happy homeowners across 40 destinations=E2=80=94incl=
+uding the most recent addition, Paris=E2=80=94<a href=3D"https://links.morn=
+ingbrew.com/c/sxt?lp=3Dtext2&mbadid=3Df679930d3e4c077d7136e8e244400b4c&mbad=
+v=3Da&mblid=3D9e4b03d6ef22&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3=
+d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D=
+"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;colo=
+r:#333">for proof</a>.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"></p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">With more tha=
+n $100m in gross profits in four years, Pacaso is ready to bring this co-ow=
+nership model across the globe.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><a href=3D"ht=
+tps://links.morningbrew.com/c/sxt?lp=3Dtext3&mbadid=3Df679930d3e4c077d7136e=
+8e244400b4c&mbadv=3Da&mblid=3De0a4a4db4e95&mbcid=3D37627402.3441033&mid=3De=
+b5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D=
+"link" target=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-deco=
+ration:none;color:#333">Invest in Pacaso before their share price changes D=
+ec. 5</a>.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+TRAVEL
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"https://links.morningbrew.com/c/ssP?=
+mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2=
+H7CF9WWEchgnE4n7ryYNum"><font color=3D'#000'>
+Greenland=E2=80=99s tourism balancing act
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/ssP?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img alt=3D"Kayak=
+ tourists in Greenland" style=3D"display: block; width: 100%; max-width: 67=
+0px;" width=3D"670" class=3D"story-header-image" src=3D"https://cdn.sanity.=
+io/images/bl383u0v/production/5c0b26a48960b6dee062f9ffed5843f9ac92caac-1024=
+x683.jpg?w=3D668&amp;q=3D70&amp;auto=3Dformat" />
+</a><span class=3D"source" style=3D"display:inline-block;padding-left:10px;=
+margin-top:5px;margin-bottom:0px;line-height:14px"><small><em>Odd Andersen/=
+Getty Images</em></small></span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Greenland is =
+more than just the name of a movie you=E2=80=99ve never seen starring Gerar=
+d Butler=E2=80=94it=E2=80=99s also a country looking to embrace its <a href=
+=3D"https://links.morningbrew.com/c/ssQ?mblid=3D91b6d33c9402&mbcid=3D376274=
+02.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4=
+n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px solid=
+ #1c7ff2;text-decoration:none;color:#333">emerging identity</a> as a touris=
+t destination while being mindful of the local environment.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">As overtouris=
+m plagues many cities in Europe, travelers are turning to the Arctic island=
+ that=E2=80=99s three times the size of Texas but has just 56,000 residents=
+. And Greenland is welcoming excursionists with enthusiasm=E2=80=94it dedic=
+ated more than $700 million to its airport infrastructure:</p>
+<ul style=3D"margin-top:0;padding-left:30px">
+<li style=3D"line-height:22px;margin-bottom:10px"><span>A new airport in Nu=
+uk opened this week; two more in the remote cities of Ilulissat and Qaqorto=
+q will open by 2026.</span></li>
+<li style=3D"line-height:22px;margin-bottom:10px"><span>Between April and A=
+ugust this year, 55,000 seats=E2=80=99 worth of flights flew to Greenland, =
+a number expected to increase to 105,000 during the same period next year.<=
+/span></li>
+</ul>
+<h2 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:19px;font-w=
+eight:700;color:#000;margin-top:0;margin-bottom:15px;margin-right:0;margin-=
+left:0">Protecting the environment</h2>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">A study shows=
+ that tourism is responsible for ~8% of global greenhouse gas emissions=E2=
+=80=94most are attributed to planes and ships carrying tourists from wealth=
+y countries like the US. It=E2=80=99s a particular concern for Ilulissat an=
+d Qaqortoq, which are popular remote locales for exploring fjords, but Gree=
+nland=E2=80=99s government has a plan.</p>
+<ul style=3D"margin-top:0;padding-left:30px"><li style=3D"line-height:22px;=
+margin-bottom:10px"><span>A proposed law would use a zoning system limiting=
+ access to certain areas: Green zones would be accessible to all tourists, =
+yellow zones would have restrictions, and red zones would ban all tour oper=
+ators.</span></li></ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">There=E2=80=99s pushback:</strong> The Association of Arcti=
+c Expedition Cruise Operators said the laws would restrict tours in uninhab=
+ited regions, which is the core of expedition touring.<em>=E2=80=94DL</em><=
+/p>
+<!-- SOCIAL LINKS -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td style=3D"padding-top: 12px;">
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssR?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/cab2ac077d288f7ba1df3571cb0ec28ce8f32b86-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssS?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/ea53a551202a4963e49199a40daf05b487846624-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssT?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/774271f5d2278014f1af0759475660e1761384eb-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a>
+</td>
+</tr>
+</table>
+<!-- END SOCIAL LINKS -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+EXPLORATION
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"https://links.morningbrew.com/c/ssU?=
+mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2=
+H7CF9WWEchgnE4n7ryYNum"><font color=3D'#000'>
+We still haven=E2=80=99t fully explored Antarctica
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/ssU?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img alt=3D"Antar=
+ctica expedition" style=3D"display: block; width: 100%; max-width: 670px;" =
+width=3D"670" class=3D"story-header-image" src=3D"https://cdn.sanity.io/ima=
+ges/bl383u0v/production/4edbd75aa25f391a20bf40374c304a1e2cfb6fbc-1024x683.j=
+pg?w=3D668&amp;q=3D70&amp;auto=3Dformat" />
+</a><span class=3D"source" style=3D"display:inline-block;padding-left:10px;=
+margin-top:5px;margin-bottom:0px;line-height:14px"><small><em>Sebnem Coskun=
+/Getty Images</em></small></span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">As humans sen=
+d probes beyond the solar system and contemplate life on Mars, a large land=
+ mass on Earth remains largely untouched by their feet. There are parts of =
+Antarctica, in fact, that are harder to reach than outer space. It is the c=
+oldest, windiest, most remote region of our planet, utterly inhospitable to=
+ humans=E2=80=94an alien world here on Earth.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">But we=E2=80=
+=99re still trying to traverse the southernmost continent, even if it=E2=80=
+=99s not getting as much attention as Roald Amundsen and Ernest Shackleton =
+gave it a century ago:</p>
+<ul style=3D"margin-top:0;padding-left:30px">
+<li style=3D"line-height:22px;margin-bottom:10px"><span>In 2014, two Britis=
+h explorers made the first completion of Robert Falcon Scott=E2=80=99s ill-=
+fated Terra Nova Expedition.</span></li>
+<li style=3D"line-height:22px;margin-bottom:10px"><span>In 2016, Henry Wors=
+ley died attempting the first solo, unsupported traversal of the continent.=
+</span></li>
+<li style=3D"line-height:22px;margin-bottom:10px"><span>In 2017, a group le=
+d by Australian adventurer Eric Philips blazed a new route to the South Pol=
+e through the Transantarctic Mountains.</span></li>
+</ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">New discoveries: </strong>Scientists still aren=E2=80=99t s=
+ure what exists beneath the network of glaciers and ice shelves, but they=
+=E2=80=99re getting closer. In the last several years, NASA=E2=80=94which s=
+tudies Antarctica with satellites and radar-equipped planes as if it were a=
+nother planet=E2=80=94discovered an underground cavern almost the size of M=
+anhattan and a 300-mile-wide asteroid crater.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">What=E2=80=99s next: </strong>Among the many projects in th=
+e works is a new research vessel from the US National Science Foundation th=
+at will be able to break through the ice to reach hard-to-study sites. (It=
+=E2=80=99s hoping to set sail by 2031.) A major concern of all future exped=
+itions is how to protect the pristine wasteland from exploitation and confl=
+ict as it becomes easier to navigate.<em>=E2=80=94AE</em></p>
+<!-- SOCIAL LINKS -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td style=3D"padding-top: 12px;">
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssV?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/cab2ac077d288f7ba1df3571cb0ec28ce8f32b86-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssW?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/ea53a551202a4963e49199a40daf05b487846624-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ssX?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/774271f5d2278014f1af0759475660e1761384eb-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a>
+</td>
+</tr>
+</table>
+<!-- END SOCIAL LINKS -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0;text-transform:upperca=
+se;">
+Together With McKinsey & Company
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"blank" style=3D"color:#000!important;text-decoration:none;bord=
+er-bottom:none!important;" href=3D"https://links.morningbrew.com/c/sp5?lp=
+=3Dtitle&mbadid=3Dbab187f2720335a5a4dee833627edb9d&mbadv=3Da&mbcid=3D376274=
+02.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4=
+n7ryYNum"></a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/sp5?lp=3Dimage&mbadid=3Dbab187f2720335a5a4dee=
+833627edb9d&mbadv=3Da&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18=
+c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D""><img alt=3D"McKins=
+ey & Company" style=3D"display:block;width:100%;max-width:670px;" width=3D"=
+670" class=3D"story-header-image" src=3D"https://cdn.sanity.io/images/bl383=
+u0v/production/61c8fd3d65530423b1db51d543ab7bfd0a139044-1536x864.jpg?w=3D66=
+8&q=3D90&auto=3Dformat"></a>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"sponsored-body story-content" style=3D"padding:15px"><p style=
+=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=3D"colo=
+r:#000">Tech=E2=80=99s top 25 breakthroughs. </strong>To celebrate <em>McKi=
+nsey Quarterly=E2=80=99s</em> 60th birthday, the McKinsey & Company team de=
+buted <a href=3D"https://links.morningbrew.com/c/sp5?lp=3Dtext1&mbadid=3Dba=
+b187f2720335a5a4dee833627edb9d&mbadv=3Da&mblid=3D2cb1a38323bf&mbcid=3D37627=
+402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE=
+4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px soli=
+d #1c7ff2;text-decoration:none;color:#333">this interactive timeline</a> th=
+at highlights key moments in biz technology. Fittingly, it spans the past s=
+ix decades. Want a look forward instead? Here=E2=80=99s their latest full i=
+ssue: <a href=3D"https://links.morningbrew.com/c/sjU?lp=3Dtext2&mbadid=3Dba=
+b187f2720335a5a4dee833627edb9d&mbadv=3Da&mblid=3D1c521d79b472&mbcid=3D37627=
+402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE=
+4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px soli=
+d #1c7ff2;text-decoration:none;color:#333"><em>The future of technology</em=
+></a>.</p></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+TRAVEL
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"https://links.morningbrew.com/c/ssY?=
+mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2=
+H7CF9WWEchgnE4n7ryYNum"><font color=3D'#000'>
+Svalbard, the cultural hub of the Arctic
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/ssY?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img alt=3D"Longy=
+earbyen" style=3D"display: block; width: 100%; max-width: 670px;" width=3D"=
+670" class=3D"story-header-image" src=3D"https://cdn.sanity.io/images/bl383=
+u0v/production/01416dc64d914877061b69ff54f8aefe6288923d-8164x6123.jpg?w=3D6=
+68&amp;q=3D70&amp;auto=3Dformat" />
+</a><span class=3D"source" style=3D"display:inline-block;padding-left:10px;=
+margin-top:5px;margin-bottom:0px;line-height:14px"><small><em>Getty Images/=
+REDA</em></small></span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Despite makin=
+g Boston feel like a tropical getaway, the Arctic archipelago Svalbard draw=
+s scores of fearless travelers and transplants seeking bone-chilling sereni=
+ty.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Situated 400 =
+miles from the North Pole in the Barents Sea, the Norwegian jurisdiction <a=
+ href=3D"https://links.morningbrew.com/c/ssZ?mblid=3Df76c1ab5ed57&mbcid=3D3=
+7627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEc=
+hgnE4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px =
+solid #1c7ff2;text-decoration:none;color:#333">derives its magnetic pull</a=
+> from photogenic glaciers, fjords, and northern lights, as well as the ava=
+ilability of dog sledding, tundra hiking, and cured seal blubber.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Roughly 2,900=
+ people cohabit with hundreds of polar bears on the main island, a communit=
+y that includes Russian coal miners as well as researchers and intrepid dig=
+ital nomads hailing from at least 52 countries. Svalbard=E2=80=99s urban ce=
+nter, Longyearbyen=E2=80=94the world=E2=80=99s northernmost settlement with=
+ a permanent population of over 1,000=E2=80=94boasts the highest-latitude j=
+azz festival and Pride parade.</p>
+<h2 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:19px;font-w=
+eight:700;color:#000;margin-top:0;margin-bottom:15px;margin-right:0;margin-=
+left:0">Anyone is welcome (with a catch)</h2>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Svalbard=E2=
+=80=99s permissive immigration rules and low taxes make it exceptionally ex=
+pat-friendly. Citizens of dozens of countries, including the US, China, Ind=
+ia, and much of the EU, can live and work there visa-free indefinitely=E2=
+=80=94as long as they have housing and means to support themselves.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">But that enta=
+ils bearing existentially chilly wintertime ruggedness=E2=80=9476 days of s=
+unless skies (aka polar night) plus an average low of 4=C2=B0 Fahrenheit in=
+ the coldest month=E2=80=94and abiding by some quirky laws, like the requir=
+ement to carry a rifle when venturing outside of towns to protect against p=
+olar bears.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">Burrowed in the permafrost=E2=80=A6</strong>is the<strong s=
+tyle=3D"color:#000"> </strong>Svalbard Global Seed Vault, an underground st=
+orage facility containing 1.3 million backup samples of edible plants from =
+almost every country in case of cataclysms (or the end of the world), plus =
+the Arctic World Archive data repository preserving digital media on film r=
+eels.<em>=E2=80=94SK</em></p>
+<!-- SOCIAL LINKS -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td style=3D"padding-top: 12px;">
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ss-?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/cab2ac077d288f7ba1df3571cb0ec28ce8f32b86-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/ss_?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/ea53a551202a4963e49199a40daf05b487846624-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/st0?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/774271f5d2278014f1af0759475660e1761384eb-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a>
+</td>
+</tr>
+</table>
+<!-- END SOCIAL LINKS -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+WORK
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"https://links.morningbrew.com/c/srv?=
+mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2=
+H7CF9WWEchgnE4n7ryYNum"><font color=3D'#000'>
+Scientists in Antarctica are developing their own accent
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<a style=3D"text-decoration:none;border:none;" target=3D"_blank" href=3D"ht=
+tps://links.morningbrew.com/c/srv?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img alt=3D"Port =
+Lockroy British Antarctic Survey Station" style=3D"display: block; width: 1=
+00%; max-width: 670px;" width=3D"670" class=3D"story-header-image" src=3D"h=
+ttps://cdn.sanity.io/images/bl383u0v/production/256e6d19054ed6dfbe80caca7e1=
+55ac94e6c1b9e-8505x5670.jpg?w=3D668&amp;q=3D70&amp;auto=3Dformat" />
+</a><span class=3D"source" style=3D"display:inline-block;padding-left:10px;=
+margin-top:5px;margin-bottom:0px;line-height:14px"><small><em>Holger Leue/G=
+etty Images</em></small></span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">When you and =
+25 of your homies are holed up together for months on end, you may develop =
+your own accent=E2=80=94and that=E2=80=99s not just the case at the TikTok =
+Hype House. Recent studies show that researchers who live in Antarctica are=
+ acquiring a new accent and vernacular, providing insight into how other la=
+nguages have changed over time.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">A study by ph=
+onetic experts at the University of Munich <a href=3D"https://links.morning=
+brew.com/c/srw?mblid=3Dc6a16c0c2106&mbcid=3D37627402.3441033&mid=3Deb5f6cde=
+1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" =
+target=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:=
+none;color:#333">analyzed</a> voice recordings of researchers based at a st=
+ation on an island in Antarctica in 2018. They found:</p>
+<ul style=3D"margin-top:0;padding-left:30px">
+<li style=3D"line-height:22px;margin-bottom:10px"><span>Over time, inhabita=
+nts who started out with different accents began to pronounce certain vowel=
+ sounds in the same way.</span></li>
+<li style=3D"line-height:22px;margin-bottom:10px"><span>The study also foun=
+d an extensive Antarctic vocabulary, including =E2=80=9Cfod plod,=E2=80=9D =
+meaning to pick up trash, =E2=80=9Cgonk,=E2=80=9D meaning sleep, and =E2=80=
+=9Cdoo,=E2=80=9D meaning a snow bike.</span></li>
+</ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">What=E2=80=99s more=E2=80=A6</strong>there=E2=80=99s variat=
+ion among the vernacular at different research stations in the region. Step=
+h Kaefer, a linguist from the University of Canterbury, spent time at three=
+ different stations to gather extensive data about the Antarctic vocabulary=
+:</p>
+<ul style=3D"margin-top:0;padding-left:30px"><li style=3D"line-height:22px;=
+margin-bottom:10px">
+<span>She found that colloquial language varied among the </span><span><a h=
+ref=3D"https://links.morningbrew.com/c/srx?mblid=3D229f4110be0b&mbcid=3D376=
+27402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchg=
+nE4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px so=
+lid #1c7ff2;text-decoration:none;color:#333">the stations</a></span><span> =
+operated by the US, UK, and New Zealand. Americans use the term =E2=80=9Cfi=
+ngies=E2=80=9D to describe people new to Antarctica, while the British use =
+=E2=80=9Cfidlets,=E2=80=9D for example.</span>
+</li></ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><strong style=
+=3D"color:#000">But=E2=80=A6</strong>it's unlikely to develop any further. =
+Both studies found that, even though isolated environments typically accele=
+rate language changes, that isn=E2=80=99t the case in Antarctica. Substanti=
+al accent changes require <a href=3D"https://links.morningbrew.com/c/sry?mb=
+lid=3D0f21a4f08bf1&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02=
+d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank"=
+ style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">=
+younger generations</a> to mimic their parents and continue developing the =
+language, and the frozen tundra isn=E2=80=99t exactly prime for raising kid=
+s.<em>=E2=80=94CC</em></p>
+<!-- SOCIAL LINKS -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td style=3D"padding-top: 12px;">
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/srz?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/cab2ac077d288f7ba1df3571cb0ec28ce8f32b86-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/srA?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/ea53a551202a4963e49199a40daf05b487846624-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a><span>=C2=A0</span>
+<a rel=3D"noopener" style=3D"text-decoration: none" target=3D"_blank" href=
+=3D"https://links.morningbrew.com/c/srB?mbcid=3D37627402.3441033&mid=3Deb5f=
+6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=
+=3D"display: inline-block; width: 25px" width=3D"25" src=3D"https://cdn.san=
+ity.io/images/bl383u0v/production/774271f5d2278014f1af0759475660e1761384eb-=
+357x357.png?w=3D50&amp;fit=3Dmax" />
+</a>
+</td>
+</tr>
+</table>
+<!-- END SOCIAL LINKS -->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+RECS
+</h3>
+</td>
+</tr>
+</table>
+<img alt=3D"To-do list banner" style=3D"display: block; width: 100%; max-wi=
+dth: 670px;" width=3D"670" class=3D"story-header-image" src=3D"https://cdn.=
+sanity.io/images/bl383u0v/production/762cbc4c673b8613a0de1bf6711a4fc25276f7=
+a4-1350x330.png?w=3D668&q=3D70&auto=3Dformat">
+<span class=3D"source" style=3D"display:inline-block;padding-left:10px;marg=
+in-top:5px;margin-bottom:0px;line-height:14px"><small><em>  </em></small></=
+span>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"story-content" style=3D"padding:15px">
+<div>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">(Meno)pause:</strong> Say =E2=80=9Cso long=E2=80=9D to mood swings,=
+ hot flashes, and sleepless nights. <a href=3D"https://links.morningbrew.co=
+m/c/spV?mblid=3D8203c22ae814&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13ec=
+a3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=
+=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;c=
+olor:#333">Winona</a>=E2=80=99s personalized, bioidentical hormone replacem=
+ent therapy helps you find balance and <a href=3D"https://links.morningbrew=
+.com/c/spV?mblid=3D3ff677f50541&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd1=
+3eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" targ=
+et=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none=
+;color:#333">feel like yourself again</a>.*</p><p style=3D"line-height:22px=
+;margin-top:0;margin-bottom:15px"><img src=3D"https://em-content.zobj.net/t=
+humbs/120/apple/237/white-heavy-check-mark_2705.png" width=3D"18" style=3D"=
+max-width:18px" alt=3D""> <strong style=3D"color:#000">Read: </strong><em>E=
+ndurance</em>, the <a href=3D"https://links.morningbrew.com/c/srC?mblid=3Db=
+cfb584367f2&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6=
+&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" style=
+=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">semina=
+l account</a> of Ernest Shackleton=E2=80=99s doomed 1915 expedition.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Read x2: </strong><em>At the Mountains of Madness</em>, H. P. Lovec=
+raft=E2=80=99s chilling <a href=3D"https://links.morningbrew.com/c/dyA?mbli=
+d=3D848d09d97df8&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5=
+a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" s=
+tyle=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">no=
+vella</a> set in Antarctica.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Read x3:</strong> <a href=3D"https://links.morningbrew.com/c/srD?mb=
+lid=3D671d5079b6b9&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02=
+d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank"=
+ style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">=
+The North Water</a>, an award-winning thriller that largely takes place abo=
+ard a 19th-century whaling ship in the Arctic Circle.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Watch: </strong>Go to Antarctica without going to Antarctica with t=
+his <a href=3D"https://links.morningbrew.com/c/srE?mblid=3D2660108b4479&mbc=
+id=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7C=
+F9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" style=3D"border-botto=
+m:2px solid #1c7ff2;text-decoration:none;color:#333">hourlong 4K video</a>.=
+</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Learn: </strong>The most interesting <a href=3D"https://links.morni=
+ngbrew.com/c/srF?mblid=3Dbe8adf6ada5c&mbcid=3D37627402.3441033&mid=3Deb5f6c=
+de1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link=
+" target=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoratio=
+n:none;color:#333">archaeological finds</a> in Antarctica.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Plan your trip: </strong><a href=3D"https://links.morningbrew.com/c=
+/srG?mblid=3Deea1d96822e0&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d=
+0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"=
+_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color=
+:#333">A search engine</a> for expedition cruises to the Arctic and Antarct=
+ica.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><img src=3D"h=
+ttps://em-content.zobj.net/thumbs/120/apple/237/white-heavy-check-mark_2705=
+.png" width=3D"18" style=3D"max-width:18px" alt=3D""> <strong style=3D"colo=
+r:#000">Brain gains: </strong>From literary giants like Cormac McCarthy to =
+award-winning science journalists like Amy Maxmen, the world=E2=80=99s best=
+-known minds read and write for <a href=3D"https://links.morningbrew.com/c/=
+stK?mblid=3Da2d0ce04c40f&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0=
+f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_=
+blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:=
+#333">Nautilus</a>. See how <a href=3D"https://links.morningbrew.com/c/stK?=
+mblid=3D014ef82da5dd&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c=
+02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blan=
+k" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333=
+">brilliance meets approachability</a>.*</p><placementslot data-id=3D"0b3d4=
+92361d7"></placementslot><p style=3D"line-height:22px;margin-top:0;margin-b=
+ottom:15px"><sup><em>*A message from our sponsor.</em></sup></p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+GAMES
+</h3>
+<h1 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:24px;color:=
+#333;font-weight:700;margin-bottom:0;line-height:26px;margin-top:8px">
+<a target=3D"_blank" style=3D"color:#000000!important;text-decoration:none;=
+border-bottom:none!important;" href=3D"#"><font color=3D'#000'>
+The puzzle section
+</font>
+</a>
+</h1>
+</td>
+</tr>
+</table>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"card-content" style=3D"padding-right:15px;padding-bottom:15px;=
+padding-left:15px;padding-top:0px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Open House is=
+ off today (our in-house real estate agent is off the grid for Thanksgiving=
+), but we wouldn=E2=80=99t leave you without a full-sized crossword over th=
+e holiday weekend.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><a href=3D"ht=
+tps://links.morningbrew.com/c/syk?mblid=3Dc2403c209e67&mbcid=3D37627402.344=
+1033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYN=
+um" class=3D"link" target=3D"_blank" style=3D"border-bottom:2px solid #1c7f=
+f2;text-decoration:none;color:#333">Play it here</a>.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 core_hidden" style=3D"margin-botto=
+m:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+SHARE THE BREW
+</h3>
+</td>
+</tr>
+</table>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"card-content" style=3D"padding-right:15px;padding-bottom:15px;=
+padding-left:15px;padding-top:0px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+15px;line-height:22px;">
+<a class=3D"link" href=3D"https://links.morningbrew.com/c/6Wq?access_token=
+=3Dj2H7CF9WWEchgnE4n7ryYNum&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca=
+3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" target=3D"_blank" style=
+=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333;border-=
+bottom-width:2px;border-bottom-style:solid;border-bottom-color:#1c7ff2;text=
+-decoration:none;color:#252525;">Share Morning Brew</a> with your friends, =
+acquire free Brew swag, and then acquire more friends as a result of your f=
+resh Brew swag.
+</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+15px;line-height:22px;">
+We=E2=80=99re saying we=E2=80=99ll give you free stuff and more friends if =
+you share a link. One link.
+</p>
+<a href=3D"https://links.morningbrew.com/c/6Wq?access_token=3Dj2H7CF9WWEchg=
+nE4n7ryYNum&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6=
+&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+15px;line-height:22px;">
+<img src=3D"https://cdn.sanity.io/images/bl383u0v/production/e8c0d668fd2ce5=
+84105a14629f9409b29ddffc91-3840x2160.png?w=3D640&q=3D60" class=3D"img-respo=
+nsive" width=3D"640" style=3D"display:block;width:100% !important;max-width=
+: 640px; width: 100%;">
+</p>
+</a>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+15px;line-height:22px;"><b>Your referral count:</b> 0</p>
+<a class=3D"stb-btn" href=3D"https://links.morningbrew.com/c/6Wq?access_tok=
+en=3Dj2H7CF9WWEchgnE4n7ryYNum&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13e=
+ca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"margin-top:i=
+nherit !important;margin-bottom:inherit !important;margin-right:inherit !im=
+portant;margin-left:inherit !important;width:100%;max-width:150px;font-fami=
+ly:Helvetica, Arial, sans-serif;font-size:16px;color:#ffffff;font-weight:90=
+0;text-decoration:none;text-align:center;background-color:#1c7ff2;padding-t=
+op:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;border-rad=
+ius:4px;display:block;">Click to Share</a>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-top:15p=
+x;margin-bottom:15px;line-height:22px;">Or copy & paste your referral link =
+to others:<br><a class=3D"link" href=3D"https://links.morningbrew.com/c/7tc=
+?kid=3Dc8410467&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a=
+8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" target=3D"_blank" style=3D"border-b=
+ottom:2px solid #1c7ff2;text-decoration:none;color:#333;border-bottom-width=
+:2px;border-bottom-style:solid;border-bottom-color:#1c7ff2;text-decoration:=
+none;color:#252525;">morningbrew.com/daily/r/?kid=3Dc8410467</a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- ARTICLE -->
+<!--[if !mso ]><! -- --><div class=3D"c6 " style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table outer" style=3D"border-collapse:collapse;border-collapse: collapse;"=
+ width=3D"100%">
+<tr>
+<td class=3D"card" style=3D"font-family:Helvetica, Arial, sans-serif;font-s=
+ize:16px;color:#333;display:block;background-color:#fff;border-radius:15px;=
+border:1px solid #e6e6e6;border-collapse:collapse;box-shadow:none;margin-bo=
+ttom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"story-card=
+-table" width=3D"100%" style=3D"border-collapse:collapse">
+<tr>
+<td class=3D"tag-title" style=3D"padding: 15px">
+<h3 style=3D"font-family:Helvetica, Arial, sans-serif;font-size:16px;color:=
+#1c7ff2;font-weight:700;margin-top:0;margin-bottom:0">
+ANSWER
+</h3>
+</td>
+</tr>
+</table>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse: collapse;" width=3D"100%">
+<tr>
+<td class=3D"card-content" style=3D"padding-right:15px;padding-bottom:15px;=
+padding-left:15px;padding-top:0px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><span style=
+=3D"text-decoration:underline">Word of the Day</span></p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">Today=E2=80=
+=99s Word of the Day is: traversal, meaning =E2=80=9Cthe act or process of =
+traveling across or over.=E2=80=9D Thanks to Ed from Arizona for the advent=
+urous suggestion. Submit another <a href=3D"https://links.morningbrew.com/c=
+/aVn?mblid=3Db2851b58c08e&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d=
+0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"=
+_blank" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color=
+:#333">Word of the Day here</a>.</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px"><br></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if !mso ]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END ARTICLE -->
+<!-- DISCLAIMER -->
+<!--[if !mso]> <! -- --><div class=3D"c6" style=3D"margin-bottom:7px">
+<!-- <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse:collapse;" width=3D"100%">
+<tr>
+<th class=3D"card" style=3D"text-align:left;font-weight:400;font-family:Hel=
+vetica, Arial, sans-serif;font-size:16px;color:#333;display:block;backgroun=
+d-color:#fff;border-radius:15px;border:1px solid #e6e6e6;border-collapse:co=
+llapse;box-shadow:none;margin-bottom:0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-col=
+lapse:collapse;" width=3D"100%">
+<tr>
+<td class=3D"disclaimers-content" style=3D"padding:15px;font-size:10px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;line-height:22=
+px;margin-top:0;margin-bottom:15px;font-size:10px;line-height:10px;"><stron=
+g style=3D"color:#000">=E2=9C=A2 A Note From Pacaso</strong></p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">This is a pai=
+d advertisement for Pacaso=E2=80=99s Regulation A offering. Please read the=
+ offering circular at <a href=3D"https://links.morningbrew.com/c/sxt?mblid=
+=3D20a11862a188&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a=
+8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" st=
+yle=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">inv=
+est.pacaso.com</a>.</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+<!--[if !mso]><! -- -->
+</div>
+<!-- <![endif]-->
+<!-- END DISCLAIMER -->
+<table bgcolor=3D"#1C7FF2" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"border-collapse: collapse" width=3D"100%">
+<tr>
+<td style=3D"text-align: center; padding: 10px 0; font-size: 21px;">
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px;  vertical-align: super;" href=3D"h=
+ttps://links.morningbrew.com/c/sJ?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"wid=
+th: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"http=
+s://cdn.sanity.io/images/bl383u0v/production/c7a6d4e69d35b9c2c68645da866f8f=
+ee0797101d-96x96.png" />
+</a>=C2=A0
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px; vertical-align: super;" href=3D"ht=
+tps://links.morningbrew.com/c/sK?mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd=
+13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"widt=
+h: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"https=
+://cdn.sanity.io/images/bl383u0v/production/bc850f15719e478323219cbfe246400=
+74ab0c306-96x96.png" />
+</a>=C2=A0
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px;  vertical-align: super;" href=3D"h=
+ttps://links.morningbrew.com/c/sL?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"wid=
+th: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"http=
+s://cdn.sanity.io/images/bl383u0v/production/4be3fbb7e388adf000065f63e01e06=
+9db9fdd60a-96x96.png" />
+</a>=C2=A0
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px;  vertical-align: super;" href=3D"h=
+ttps://links.morningbrew.com/c/sM?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"wid=
+th: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"http=
+s://cdn.sanity.io/images/bl383u0v/production/6af774b2e94fc201bff9ad736da144=
+c7f1f8468a-96x96.png" />
+</a>=C2=A0
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px;  vertical-align: super;" href=3D"h=
+ttps://links.morningbrew.com/c/49z?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"wi=
+dth: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"htt=
+ps://cdn.sanity.io/images/bl383u0v/production/ccfbd021e2000f116305d0f75c4e9=
+5dbdb2996ba-96x96.png" />
+</a>=C2=A0
+<a rel=3D"noopener" target=3D"_blank" style=3D"width: 32px; height: 32px; d=
+isplay: inline-block; line-height: 32px;  vertical-align: super;" href=3D"h=
+ttps://links.morningbrew.com/c/sO?mbcid=3D37627402.3441033&mid=3Deb5f6cde1f=
+d13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum"><img style=3D"wid=
+th: 100%; height: 100%; vertical-align: text-top;" width=3D"32" src=3D"http=
+s://cdn.sanity.io/images/bl383u0v/production/56835eaa4b1e8e7314950c4862d5df=
+ccc9fc410c-96x96.png" />
+</a>
+</td>
+</tr>
+</table>
+<!-- FOOTER -->
+<table bgcolor=3D"#E9EBF7" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"border-collapse: collapse;" width=3D"100%">
+<tr>
+<td align=3D"left" class=3D"footer-top" style=3D"font-family:Arial,Helvetic=
+a,sans-serif;font-size:15px;text-align:left;border-bottom:1px solid #c0c3cc=
+;padding:15px">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px">
+Written by
+<a href=3D"https://links.morningbrew.com/c/bCF?mbcid=3D37627402.3441033&mid=
+=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" clas=
+s=3D"link" target=3D"_blank" rel=3D"noopener" style=3D"border-bottom:2px so=
+lid #1c7ff2;text-decoration:none;color:#333">Adam Epstein</a>, <span>Sam Kl=
+ebanov</span>, <span>Dave Lozo</span>, and <a href=3D"https://links.morning=
+brew.com/c/54J?mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8=
+fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" class=3D"link" target=3D"_blank" rel=
+=3D"noopener" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none=
+;color:#333">Cassandra Cassidy</a>
+</p>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;font-style: it=
+alic;">
+Was this email forwarded to you? Sign up
+<a class=3D"link" href=3D"https://links.morningbrew.com/c/s1_?kid=3Dc841046=
+7&mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3D=
+j2H7CF9WWEchgnE4n7ryYNum" rel=3D"noopener" target=3D"_blank" style=3D"borde=
+r-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">here</a>.
+</p>
+<div class=3D"core_hidden">
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+ 0px;">
+<strong style=3D"color:#000;font-size: 17px;">
+Take The Brew to work
+</strong>
+</p>
+<ul style=3D"margin-top:0;padding-left:30px;margin-top: 0px;">
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Marketers:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Ok?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Marketing Brew</a=
+></span><span>
+</span>
+</li>
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Corporate:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Ol?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">CFO Brew</a></spa=
+n><span>
+=C2=A0
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Om?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">HR Brew</a></span=
+><span>
+</span>
+</li>
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Tech:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6On?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">IT Brew</a></span=
+><span>
+=C2=A0
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Oo?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Tech Brew</a></sp=
+an><span>
+</span>
+</li>
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Retailers:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Op?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Retail Brew</a></=
+span>
+</li>
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Healthcare:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/6Oq?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Healthcare Brew</=
+a></span>
+</li>
+</ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+ 0px;">
+<strong style=3D"color:#000;font-size: 17px;">
+Get smarter in just 5 minutes
+</strong>
+</p>
+<ul style=3D"margin-top:0;padding-left:30px;margin-top: 0px;">
+<li style=3D"line-height:22px;margin-bottom:10px;margin-bottom: 0px;">
+<span>
+Money & Career:
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/s20?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Money With Katie<=
+/a></span><span>
+=C2=A0
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/s21?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Bossy</a></span><=
+span>
+=C2=A0
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/s22?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">Brew Markets</a><=
+/span><span>
+=C2=A0
+</span><span><a target=3D"_blank" rel=3D"noopener" class=3D"link" href=3D"h=
+ttps://links.morningbrew.com/c/s23?mbcid=3D37627402.3441033&mid=3Deb5f6cde1=
+fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-=
+bottom:2px solid #1c7ff2;text-decoration:none;color:#333">The Playbook</a><=
+/span><span>
+</span>
+</li>
+</ul>
+<p style=3D"line-height:22px;margin-top:0;margin-bottom:15px;margin-bottom:=
+ 0px;">
+<strong style=3D"color:#000;font-size: 17px;">
+Interested in podcasts?
+</strong>
+</p>
+<ul style=3D"margin-top:0;padding-left:30px;margin-top: 0px;">
+<li style=3D"line-height:22px;margin-bottom:10px">
+<span>
+Check out ours </span><span><a rel=3D"noopener" target=3D"_blank" class=3D"=
+link" href=3D"https://links.morningbrew.com/c/s24?mbcid=3D37627402.3441033&=
+mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7ryYNum" s=
+tyle=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:#333">he=
+re</a></span>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: Arial, Helvetica, sans-serif; fo=
+nt-size: 12px; color: #79787d; padding: 15px;">
+<a target=3D"_blank" class=3D"link" href=3D"https://links.morningbrew.com/c=
+/7x5?mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=
+=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-bottom:2px solid #1c7ff2;text-=
+decoration:none;color:#333">ADVERTISE</a>
+//
+<a class=3D"link" href=3D"https://links.morningbrew.com/c/1k?mbcid=3D376274=
+02.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4=
+n7ryYNum" target=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-d=
+ecoration:none;color:#333">CAREERS</a>
+//
+<a class=3D"link" href=3D"https://links.morningbrew.com/c/6Ou?mbcid=3D37627=
+402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE=
+4n7ryYNum" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;co=
+lor:#333">SHOP</a>
+//
+<a class=3D"link" href=3D"https://links.morningbrew.com/c/6Ow?mbcid=3D37627=
+402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE=
+4n7ryYNum" target=3D"_blank" style=3D"border-bottom:2px solid #1c7ff2;text-=
+decoration:none;color:#333">FAQ</a>
+<br>
+<br>
+Update your email preferences or unsubscribe
+<a class=3D"link mwk-footer-link" href=3D"https://links.morningbrew.com/c/7=
+sN?access_token=3Dj2H7CF9WWEchgnE4n7ryYNum&bid=3D37627402&mbcid=3D37627402.=
+3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=3Dj2H7CF9WWEchgnE4n7r=
+yYNum" style=3D"border-bottom:2px solid #1c7ff2;text-decoration:none;color:=
+#333;color: #1C7FF2" target=3D"_blank">here</a>.
+<br>
+View our privacy policy
+<a class=3D"link mwk-footer-link" href=3D"https://links.morningbrew.com/c/6=
+Oy?mbcid=3D37627402.3441033&mid=3Deb5f6cde1fd13eca3d0f18c02d5a8fe6&mbuuid=
+=3Dj2H7CF9WWEchgnE4n7ryYNum" style=3D"border-bottom:2px solid #1c7ff2;text-=
+decoration:none;color:#333;color: #1C7FF2" target=3D"_blank">here</a>.
+<br>
+<br>
+Copyright =C2=A9
+2024
+Morning Brew. All rights reserved.
+<br>
+22 W 19th St, 4th Floor, New York, NY 10011
+</td>
+</tr>
+</table>
+<!-- END FOOTER -->
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+------=_Part_2505294_1051975650.1732969652550--
